@@ -1,0 +1,91 @@
+
+
+STDERR:
+[nltk_data] Error loading stopwords: <urlopen error [Errno -3]
+[nltk_data]     Temporary failure in name resolution>
+Traceback (most recent call last):
+  File "/home/sandbox/.local/lib/python3.11/site-packages/nltk/corpus/util.py", line 84, in __load
+    root = nltk.data.find(f"{self.subdir}/{zip_name}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sandbox/.local/lib/python3.11/site-packages/nltk/data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93mstopwords[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('stopwords')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mcorpora/stopwords.zip/stopwords/[0m
+
+  Searched in:
+    - '/home/sandbox/nltk_data'
+    - '/usr/local/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+**********************************************************************
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/fake_news_detection_modern_gui/src/model_training.py", line 43, in <module>
+    train_and_save()
+  File "/mnt/data/fake_news_detection_modern_gui/src/model_training.py", line 17, in train_and_save
+    df = load_data()
+         ^^^^^^^^^^^
+  File "/mnt/data/fake_news_detection_modern_gui/src/data_preprocessing.py", line 31, in load_data
+    df["text"] = df["text"].apply(clean_text)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sandbox/.local/lib/python3.11/site-packages/pandas/core/series.py", line 4771, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sandbox/.local/lib/python3.11/site-packages/pandas/core/apply.py", line 1123, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sandbox/.local/lib/python3.11/site-packages/pandas/core/apply.py", line 1174, in apply_standard
+    mapped = lib.map_infer(
+             ^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 2924, in pandas._libs.lib.map_infer
+  File "/mnt/data/fake_news_detection_modern_gui/src/data_preprocessing.py", line 19, in clean_text
+    stop = set(stopwords.words("english"))
+               ^^^^^^^^^^^^^^^
+  File "/home/sandbox/.local/lib/python3.11/site-packages/nltk/corpus/util.py", line 120, in __getattr__
+    self.__load()
+  File "/home/sandbox/.local/lib/python3.11/site-packages/nltk/corpus/util.py", line 86, in __load
+    raise e
+  File "/home/sandbox/.local/lib/python3.11/site-packages/nltk/corpus/util.py", line 81, in __load
+    root = nltk.data.find(f"{self.subdir}/{self.__name}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sandbox/.local/lib/python3.11/site-packages/nltk/data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93mstopwords[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('stopwords')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mcorpora/stopwords[0m
+
+  Searched in:
+    - '/home/sandbox/nltk_data'
+    - '/usr/local/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/local/lib/nltk_data'
+    - '/usr/share/nltk_data'
+    - '/usr/local/share/nltk_data'
+    - '/usr/lib/nltk_data'
+    - '/usr/local/lib/nltk_data'
+**********************************************************************
+
